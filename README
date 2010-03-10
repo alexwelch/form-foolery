@@ -1,0 +1,42 @@
+LabeledFormBuilder 
+==================
+
+Automatically creates field labels, and surrounds the form markup using Data-Definition Lists. 
+
+At it's simplest, you use `labeled_form_for` the same way as `form_for`, then define each field of the object:
+
+    <% labeled_form_for :project, :url=>project_url do |f| %>
+      <%= f.text_field :name %>
+      <%= f.text_field :owner %>
+      <%= f.text_field :password %>
+      <%= f.text_area  :description %>
+    <% end %>
+
+This will create the form, labels and input tags, and structural markup (DL, DT, DD). The labels are based on the field names. You can, of course, override them by adding a `:label` option:
+
+    <%= f.text_field :owner, :label=>'Owner Email Address' %>
+
+The field methods also except `:info` and `:example` options. The `:info` content will appear directly after the label, in a SPAN tag with the class of "info". It will put the content specified in the `:example` option in a DD tag with the class of "example" directly after the DD tag containing the field HTML.
+
+This plugin also adds a form method for `button_group`, `field_group`, and `field_set` which puts the block content in a DD tag with the class of "button-group":
+
+    <% f.button_group do %>
+      	<%= submit_tag 'Create' %> or <%= link_to "Cancel", projects_url %>
+    <% end %>
+
+	<% f.field_group do %>
+      	<%= f.text_field :first_name %>
+		<%= f.text_field :last_name %>
+    <% end %>
+
+    <% f.field_set :legend => "Personal Info", :with_groups => true do %>
+      	<% f.field_group do %>
+      		<%= f.text_field :first_name %>
+			<%= f.text_field :last_name %>
+    	<% end %>
+		<% f.field_group do %>
+      		<%= f.text_field :city %>
+			<%= f.text_field :state %>
+    	<% end %>
+    <% end %>
+   

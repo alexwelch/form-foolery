@@ -1,0 +1,85 @@
+/* --- Form stuff --- */
+
+fieldset {
+	background-color: #fbfbfb;
+	border: #ebebeb 5px solid;
+	margin: 10px;
+	padding: 10px;
+}
+fieldset legend {
+	display: block;
+	border: red 1px solid;
+	padding: 10px;
+	margin: 0;
+}
+
+/* --- Fields --- */
+
+input,
+select,
+textarea {
+	border: #ccc 1px solid;
+}
+
+input.checkBoxInput {}
+input.radioInput {}
+input.textInput {}
+select {}
+option {}
+optgroup {}
+textarea { height: 200px; width: 400px;}
+
+/* special states */
+
+input.focus,
+select.focus,
+textarea.focus {
+	border: black 1px inset !important;
+}
+
+input.default,
+select.default,
+textarea.default {
+	font-style: italic;
+	color: #1c1;
+}
+
+form ul li {
+	clear: left;
+	background-color: #afafaf;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+form ul li.focused {
+	background-color: #ccc;
+}
+
+form ul li.error {
+	border: #DF7D7D 1px solid;
+	border-width: 1px 0;
+	background-color: #FFDFDF;
+}
+	form ul li.error p.error_desc {
+		font-style: italic;
+		font-size: 11px;
+		color: #DF7D7D;
+	}
+
+form ul li label {
+
+}
+form ul li label.sm_label {
+	font-style: italic;
+	font-size: 12px;
+	padding: 3px 0;
+	cursor: pointer;
+}
+form ul li label.sm_label:hover {
+	color: green;
+}
+
+div.ff_left {
+	float: left;
+	margin-right: 10px;
+}

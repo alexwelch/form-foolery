@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Sep 30 22:22:21 -0500 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="../classes/LabeledFormBuilder.html">LabeledFormBuilder</a>
+</p>
+<h6>============</h6>
+<p>
+Automatically creates field labels, and surrounds the form markup using
+Data-Definition Lists.
+</p>
+<p>
+At it&#8216;s simplest, you use `labeled_form_for` the same way as
+`form_for`, then define each field of the object:
+</p>
+<pre>
+    &lt;% labeled_form_for :project, :url=&gt;project_url do |f| %&gt;
+      &lt;%= f.text_field :name %&gt;
+      &lt;%= f.text_field :owner %&gt;
+      &lt;%= f.text_field :password %&gt;
+      &lt;%= f.text_area  :description %&gt;
+    &lt;% end %&gt;
+</pre>
+<p>
+This will create the form, labels and input tags, and structural markup
+(DL, DT, DD). The labels are based on the field names. You can, of course,
+override them by adding a `:label` option:
+</p>
+<pre>
+    &lt;%= f.text_field :owner, :label=&gt;'Owner Email Address' %&gt;
+</pre>
+<p>
+The field methods also except `:info` and `:example` options. The `:info`
+content will appear directly after the label, in a SPAN tag with the class
+of &quot;info&quot;. It will put the content specified in the `:example`
+option in a DD tag with the class of &quot;example&quot; directly after the
+DD tag containing the field HTML.
+</p>
+<p>
+This plugin also adds a form method for `button_group`, `field_group`, and
+`field_set` which puts the block content in a DD tag with the class of
+&quot;button-group&quot;:
+</p>
+<pre>
+    &lt;% f.button_group do %&gt;
+        &lt;%= submit_tag 'Create' %&gt; or &lt;%= link_to &quot;Cancel&quot;, projects_url %&gt;
+    &lt;% end %&gt;
+
+        &lt;% f.field_group do %&gt;
+        &lt;%= f.text_field :first_name %&gt;
+                &lt;%= f.text_field :last_name %&gt;
+    &lt;% end %&gt;
+
+    &lt;% f.field_set :legend =&gt; &quot;Personal Info&quot;, :with_groups =&gt; true do %&gt;
+        &lt;% f.field_group do %&gt;
+                &lt;%= f.text_field :first_name %&gt;
+                        &lt;%= f.text_field :last_name %&gt;
+        &lt;% end %&gt;
+                &lt;% f.field_group do %&gt;
+                &lt;%= f.text_field :city %&gt;
+                        &lt;%= f.text_field :state %&gt;
+        &lt;% end %&gt;
+    &lt;% end %&gt;
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

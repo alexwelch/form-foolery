@@ -1,0 +1,7 @@
+=============================
+ Labeled From Builder Plugin
+=============================
+
+This File copies in forms.css and a formfoolery.js file to work in conjunction with the plugin. Please include them in your application layout.
+
+Be sure and read the README file. It's located at vendor/plugins/labeled_form_builder/README or just run rake rdoc in the plugin directory for some documentation on the whole thing
